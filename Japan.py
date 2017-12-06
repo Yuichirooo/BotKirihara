@@ -236,6 +236,7 @@ def bot(op):
             try:
               G = cl.getGroup(op.param1)
               cl.kickoutFromGroup(op.param1,[op.param2])
+	      cl.inviteIntoGroup(op.param1,[op.param3])
               G.preventJoinByTicket = False
               cl.updateGroup(G)
               Ticket = cl.reissueGroupTicket(op.param1)
@@ -255,6 +256,7 @@ def bot(op):
             except:
               G = random.choice(KAC).getGroup(op.param1) 
               random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+	      random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
               G.preventJoinByTicket = False
               random.choice(KAC).updateGroup(G)
               Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
@@ -1544,7 +1546,7 @@ def bot(op):
 
 #-----------------------------------------------
          #----------------Fungsi Join Group Start-----------------------#
-            elif msg.text in ["Kuy","Japan team join","Join kuy"]: #Panggil Semua Bot
+            elif msg.text in ["Kuy japan team","Japan team join","Join kuy"]: #Panggil Semua Bot
               if msg.from_ in owner:
                 G = cl.getGroup(msg.to)
                 ginfo = cl.getGroup(msg.to)
@@ -2217,14 +2219,14 @@ def bot(op):
           if op.param2 in Bots:
             return
           ginfo = cl.getGroup(op.param1)
-          random.choice(KAC).sendText(op.param1, client.getContact(op.param2).displayName + " Selamat Datang Di Grup  " + str(ginfo.name))
+	  random.choice(KAC).sendText(op.param1, "Halooo kamu yang bernama " + cl.getContact(op.param2).displayName + " 😘😘")
+          random.choice(KAC).sendText(op.param1, "Selamat Datang Di Grup  " + str(ginfo.name))
           random.choice(KAC).sendText(op.param1, "Owner Grup " + str(ginfo.name) + " :\n" + ginfo.creator.displayName)
-          random.choice(KAC).sendText(op.param1,"Budayakan Baca Note !!! yah Ka 😊\nSemoga Betah Kamooh 😘")
           #print "MEMBER HAS JOIN THE GROUP"
         if op.type == 15:
           if op.param2 in Bots:
              return
-          random.choice(KAC).sendText(op.param1, client.getContact(op.param2).displayName + " Gakuat Iman Saya Rasa :v ")
+          random.choice(KAC).sendText(op.param1, cl.getContact(op.param2).displayName + " Gakuat Iman Saya Rasa􀜁􀅔Har Har􏿿")
           #print "MEMBER HAS LEFT THE GROUP"
 #------------------------
         if op.type == 59:
